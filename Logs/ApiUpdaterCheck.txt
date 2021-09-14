@@ -1,0 +1,10 @@
+[api-updater (non-obsolete-error-filter)] 9/10/2021 5:12:11 PM : Starting /Volumes/G-Raid/Applications/Unity 2020.3/Unity 2020.3.app/Contents/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 730.565ms
+moved types parse time: 73ms
+candidates parse time : 33ms
+C# parse time         : 402ms
+candidates check time : 33ms
+console write time    : 0ms
+
