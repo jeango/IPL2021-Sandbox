@@ -3,7 +3,6 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private int rotationSpeed;
     [SerializeField] private bool autoMode = false;
     [SerializeField] private Transform target;
 
@@ -35,14 +34,6 @@ public class MovementController : MonoBehaviour
             dir = target.position-transform.position;
         else
             dir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        if (dir.magnitude > 0)
-        {
-            var targetRotation = Quaternion.LookRotation(dir);
-            transform.rotation =
-                Quaternion.RotateTowards(transform.rotation, 
-                    targetRotation, 
-                    rotationSpeed * Time.deltaTime);
-        }
         var newPos = transform.position;
         newPos += dir.normalized * Time.deltaTime * speed;
         transform.position = newPos;
