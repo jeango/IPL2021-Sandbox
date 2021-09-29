@@ -10,6 +10,7 @@
           <e p="HelloWorld.cs" t="Include" />
           <e p="HitDetection.cs" t="Include" />
           <e p="MovementController.cs" t="Include" />
+          <e p="Raycaster.cs" t="Include" />
         </e>
       </e>
       <e p="IPL2021-Sandbox.sln" t="IncludeFlat" />

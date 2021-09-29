@@ -450,7 +450,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583804769}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 84362c08ff29f4274a677625a218ebc9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -532,6 +532,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 41238611936939882}
     - target: {fileID: 1755755901, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 41238611936939882}
+    - target: {fileID: 1755755901, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 149805209}
@@ -543,6 +547,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 360
       objectReference: {fileID: 0}
+    - target: {fileID: 1755755901, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
+      propertyPath: groundDetection
+      value: 
+      objectReference: {fileID: 41238611936939883}
     - target: {fileID: 643526816813644737, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -557,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3845903229656211527, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.17
       objectReference: {fileID: 0}
     - target: {fileID: 3845903229656211527, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -565,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3845903229656211527, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.164
+      value: 6.16
       objectReference: {fileID: 0}
     - target: {fileID: 3845903229656211527, guid: ac7929865a3e34087bf29547d77ab3fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -628,5 +636,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &41238611936939883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41238611936939881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a882b9742bf8649e28120a9b6b6d137b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: -1, z: 0}
+  maxDistance: 1

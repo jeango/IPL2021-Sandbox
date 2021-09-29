@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MovementController : MonoBehaviour
 {
@@ -6,13 +7,14 @@ public class MovementController : MonoBehaviour
     [SerializeField] private int rotationSpeed;
     [SerializeField] private bool autoMode = false;
     [SerializeField] private Transform target;
-    [SerializeField] private Rigidbody rb;
+    [FormerlySerializedAs("rb")] [SerializeField] private Rigidbody body;
+    [SerializeField] private Raycaster groundDetection;
     
 
     private Vector3 direction;
 
     private float _sleepDuration;
-    public bool CanMove => _sleepDuration <= 0;
+    public bool CanMove => _sleepDuration <= 0 && groundDetection.Query();
 
     // Update is called once per frame
     void Update()
@@ -32,7 +34,12 @@ public class MovementController : MonoBehaviour
     private void PhysicsMove()
     {
         if (CanMove)
-            rb.AddForce(direction * speed - rb.velocity, ForceMode.VelocityChange);
+        {
+            var velocityAdjust = body.velocity;
+            velocityAdjust.y = 0;
+            Debug.DrawRay(transform.position, direction * speed, Color.magenta);
+            body.AddForce(direction * speed - velocityAdjust, ForceMode.VelocityChange);
+        }
     }
 
     public void DisableMovement(float duration)
@@ -58,6 +65,7 @@ public class MovementController : MonoBehaviour
             direction = target.position-transform.position;
         else
             direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        direction = Vector3.ProjectOnPlane(direction, Vector3.up);
         if (direction.magnitude > 0)
         {
             var targetRotation = Quaternion.LookRotation(direction);
