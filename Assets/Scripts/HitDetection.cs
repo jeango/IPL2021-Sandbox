@@ -4,10 +4,11 @@ using Random = UnityEngine.Random;
 public class HitDetection : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask playerLayer;
 
     private void OnTriggerStay(Collider other)
     {
-        //Relocate();
+        Relocate();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,14 +27,19 @@ public class HitDetection : MonoBehaviour
 
     private void Relocate()
     {
-        var offset = new Vector3(Random.Range(-5f, 5f), 100f, Random.Range(-5f, 5f));
-        if (Physics.Raycast(transform.position + offset, Vector3.down, out var result, 200f, groundLayer))
+        for (int i = 0; i < 100; i++)
         {
+            var offset = new Vector3(Random.Range(-5f, 5f), 100f, Random.Range(-5f, 5f));
+            if (!Physics.Raycast(transform.position + offset, Vector3.down, out var result, 200f, groundLayer))
+                continue;
+            Debug.DrawRay(result.point + Vector3.up * 10f, Vector3.down * 10f, Color.blue, 1f);
+            if (Physics.CheckSphere(result.point, 4f, playerLayer))
+                continue;
             var t = transform;
             t.position = result.point;
             var forward = Vector3.ProjectOnPlane(t.forward, result.normal);
             transform.rotation = Quaternion.LookRotation(forward, result.normal);
-            
+            break;
         }
     }
 }
