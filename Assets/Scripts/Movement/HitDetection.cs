@@ -6,20 +6,20 @@ public class HitDetection : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask playerLayer;
 
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionStay(Collision other)
     {
         Relocate();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         Bump(other);
         Relocate();
     }
 
-    private void Bump(Collider other)
+    private void Bump(Collision other)
     {
-        var rb = other.attachedRigidbody;
+        var rb = other.rigidbody;
         var direction = other.transform.position - transform.position;
         rb.AddForce(direction * 10, ForceMode.Impulse);
         rb.GetComponent<MovementController>()?.DisableMovement(1);
@@ -29,11 +29,11 @@ public class HitDetection : MonoBehaviour
     {
         for (int i = 0; i < 100; i++)
         {
-            var offset = new Vector3(Random.Range(-5f, 5f), 100f, Random.Range(-5f, 5f));
+            var offset = new Vector3(Random.Range(-10f, 10f), 100f, Random.Range(-10f, 10f));
             if (!Physics.Raycast(transform.position + offset, Vector3.down, out var result, 200f, groundLayer))
                 continue;
             Debug.DrawRay(result.point + Vector3.up * 10f, Vector3.down * 10f, Color.blue, 1f);
-            if (Physics.CheckSphere(result.point, 4f, playerLayer))
+            if (Physics.CheckSphere(result.point, 3f, playerLayer))
                 continue;
             var t = transform;
             t.position = result.point;

@@ -8,12 +8,18 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="HelloWorld.cs" t="Include" />
-          <e p="HitDetection.cs" t="Include" />
-          <e p="MovementController.cs" t="Include" />
-          <e p="Raycaster.cs" t="Include" />
+          <e p="Movement" t="Include">
+            <e p="EnemyDetector.cs" t="Include" />
+            <e p="HitDetection.cs" t="Include" />
+            <e p="Movement.asmdef" t="Include" />
+            <e p="MovementController.cs" t="Include" />
+            <e p="MovementControllerBase.cs" t="Include" />
+            <e p="Raycaster.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="IPL2021-Sandbox.sln" t="IncludeFlat" />
+      <e p="Movement.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp/Bin" t="ExcludeRecursive" />

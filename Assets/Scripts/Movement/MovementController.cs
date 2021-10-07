@@ -1,37 +1,25 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class MovementController : MonoBehaviour
+public class MovementController : MovementControllerBase
 {
-    [SerializeField] private float speed;
     [SerializeField] private int rotationSpeed;
     [SerializeField] private bool autoMode = false;
     [SerializeField] private Transform target;
-    [FormerlySerializedAs("rb")] [SerializeField] private Rigidbody body;
-    [SerializeField] private Raycaster groundDetection;
-    
+
 
     private Vector3 direction;
 
     private float _sleepDuration;
     public bool CanMove => _sleepDuration <= 0 && groundDetection.Query();
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (_sleepDuration > 0)
             _sleepDuration -= Time.deltaTime;
-        Jump();
-        Fire();
-        Move();
+        base.Update();
     }
 
-    private void FixedUpdate()
-    {
-        PhysicsMove();
-    }
-
-    private void PhysicsMove()
+    protected override void PhysicsMove()
     {
         if (CanMove)
         {
@@ -46,20 +34,21 @@ public class MovementController : MonoBehaviour
     {
         _sleepDuration = duration;
     }
-    private void Fire()
+
+    protected override void Fire()
     {
         if (Input.GetButton("Fire1"))
             Debug.Log("Fire!");
         
     }
 
-    private void Jump()
+    protected override void Jump()
     {
         if (Input.GetButtonDown("Jump"))
             Debug.Log("Jump!");
     }
 
-    private void Move()
+    protected override void Move()
     {
         if (autoMode)
             direction = target.position-transform.position;
@@ -80,5 +69,10 @@ public class MovementController : MonoBehaviour
         newPos += dir.normalized * Time.deltaTime * speed;
         transform.position = newPos;
         */
+    }
+
+    public void SetAutoMode(bool mode)
+    {
+        autoMode = mode;
     }
 }
