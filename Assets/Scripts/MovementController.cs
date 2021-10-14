@@ -9,6 +9,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Transform target;
     [FormerlySerializedAs("rb")] [SerializeField] private Rigidbody body;
     [SerializeField] private Raycaster groundDetection;
+    [SerializeField] private Canon canon;
     
 
     private Vector3 direction;
@@ -48,8 +49,10 @@ public class MovementController : MonoBehaviour
     }
     private void Fire()
     {
-        if (Input.GetButton("Fire1"))
-            Debug.Log("Fire!");
+        if (Input.GetButtonDown("Fire1"))
+        {
+            canon.Fire();
+        }
         
     }
 
