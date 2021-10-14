@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1928516394918106267}
   - component: {fileID: 6139511477453860710}
   - component: {fileID: 426619766723513536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3164885494545901480}
   - component: {fileID: 8177313217709537569}
   - component: {fileID: 2469417615602195835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3845903229656211527}
   - component: {fileID: 1755755901}
-  m_Layer: 0
+  - component: {fileID: 41238611936939882}
+  - component: {fileID: 41238611936939883}
+  m_Layer: 8
   m_Name: Alfred
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,3 +239,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  rotationSpeed: 360
+  autoMode: 1
+  target: {fileID: 0}
+  body: {fileID: 41238611936939882}
+  groundDetection: {fileID: 41238611936939883}
+--- !u!54 &41238611936939882
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7506535299688197090}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &41238611936939883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7506535299688197090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a882b9742bf8649e28120a9b6b6d137b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: {x: 0, y: 0.5, z: 0}
+  direction: {x: 0, y: -1, z: 0}
+  maxDistance: 1

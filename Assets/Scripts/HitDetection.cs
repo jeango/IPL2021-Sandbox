@@ -8,6 +8,7 @@ public class HitDetection : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float blastRadius;
     [SerializeField] private float blastPower;
+    [SerializeField] private Object spawnedObject;
 
     private void OnTriggerStay(Collider other)
     {
@@ -26,7 +27,7 @@ public class HitDetection : MonoBehaviour
         var position = transform.position;
         var direction = other.transform.position - position;
 
-        Instantiate(rb);
+        Instantiate(spawnedObject, rb.position, rb.rotation);
 
         var colliders = Physics.OverlapSphere(position, blastRadius, playerLayer);
         var bodies = colliders.Select(c => c.attachedRigidbody).Distinct();

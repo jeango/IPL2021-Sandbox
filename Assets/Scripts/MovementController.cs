@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,6 +16,12 @@ public class MovementController : MonoBehaviour
 
     private float _sleepDuration;
     public bool CanMove => _sleepDuration <= 0 && groundDetection.Query();
+
+    private void Start()
+    {
+        if (target) return;
+        target = FindObjectOfType<HitDetection>().transform;
+    }
 
     // Update is called once per frame
     void Update()
