@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour
     private Vector3 direction;
 
     private float _sleepDuration;
+    [SerializeField] private Canon canon;
     public bool CanMove => _sleepDuration <= 0 && groundDetection.Query();
 
     // Update is called once per frame
@@ -49,7 +50,9 @@ public class MovementController : MonoBehaviour
     private void Fire()
     {
         if (Input.GetButton("Fire1"))
-            Debug.Log("Fire!");
+        {
+            canon.Fire();
+        }
         
     }
 
