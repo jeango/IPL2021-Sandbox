@@ -8,11 +8,13 @@ public class HitDetection : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (playerLayer != (playerLayer | 1 << other.gameObject.layer)) return;
         Relocate();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (playerLayer != (playerLayer | 1 << other.gameObject.layer)) return;
         Bump(other);
         Relocate();
     }
