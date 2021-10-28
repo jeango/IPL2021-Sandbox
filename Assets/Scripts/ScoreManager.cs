@@ -24,6 +24,12 @@ public class ScoreManager : SingletonBehaviour<ScoreManager>
         OnHiScoreChanged?.Invoke(_hiScore);
     }
 
+    public void Reset()
+    {
+        _currentScore = 0;
+        OnScoreChanged?.Invoke(_currentScore);
+    }
+
     public void GainScore(int value)
     {
         _currentScore += value;
