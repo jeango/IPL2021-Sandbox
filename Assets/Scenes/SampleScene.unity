@@ -292,7 +292,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352793766800961251}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &149805213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1459,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1530890554912584041, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530890554912584041, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530890554912584041, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530890554912584041, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530890554912584041, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530890554912584041, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139304101715289138, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139304101715289138, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139304101715289138, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139304101715289138, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139304101715289138, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139304101715289138, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075197904772896068, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+      propertyPath: m_Name
+      value: ScorePanel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47984770e1bc4932acecd53830330bd, type: 3}
 --- !u!114 &352793766800961249 stripped
@@ -1471,3 +1535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07056abd754e64eedb8935dd1bd0fd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &352793766800961251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1782089688443202819, guid: b47984770e1bc4932acecd53830330bd, type: 3}
+  m_PrefabInstance: {fileID: 352793766800961248}
+  m_PrefabAsset: {fileID: 0}
