@@ -20,10 +20,6 @@ public class Canon : MonoBehaviour
         {
             StartCoroutine(Shooting());
         }
-        if (_canShoot)
-        {
-            Shoot();
-        }
     }
 
     private IEnumerator Shooting()
@@ -31,9 +27,7 @@ public class Canon : MonoBehaviour
         _busyShooting = true;
         while (_keepShooting)
         {
-            _canShoot = true;
-            yield return null;
-            _canShoot = false;
+            Shoot();
             yield return new WaitForSeconds(interval);
             _keepShooting = false;
             yield return null;

@@ -23,7 +23,7 @@ public class HitDetection : MonoBehaviour
     {
         var rb = other.attachedRigidbody;
         var direction = other.transform.position - transform.position;
-        rb.AddForce(direction * 10, ForceMode.Impulse);
+        rb.AddForce(direction * 5, ForceMode.Impulse);
         rb.GetComponent<MovementController>()?.DisableMovement(1);
     }
 

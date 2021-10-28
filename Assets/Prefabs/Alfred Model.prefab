@@ -107,7 +107,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744557465016058493}
-  - component: {fileID: 41238611936939886}
   m_Layer: 0
   m_Name: Canon Pivot
   m_TagString: Untagged
@@ -131,22 +130,6 @@ Transform:
   m_Father: {fileID: 8959336639037317313}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &41238611936939886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181653300626518264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8146e3ac51cd458d94328b8c535f809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 4821828653591161546, guid: e96df30f9e72242f38e0565e8aa308cd, type: 3}
-  spawnPoint: {fileID: 1866821711085079496}
-  speed: 30
-  interval: 0
 --- !u!1 &3145746173052816503
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,11 +360,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3845903229656211527}
-  - component: {fileID: 1755755901}
   - component: {fileID: 41238611936939882}
-  - component: {fileID: 41238611936939883}
   m_Layer: 8
-  m_Name: Alfred
+  m_Name: Alfred Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,25 +383,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1755755901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7506535299688197090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b15d6bb9f6423b875b7c44578b4927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  rotationSpeed: 360
-  autoMode: 1
-  target: {fileID: 0}
-  body: {fileID: 41238611936939882}
-  groundDetection: {fileID: 41238611936939883}
-  canon: {fileID: 41238611936939886}
 --- !u!54 &41238611936939882
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -437,21 +399,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &41238611936939883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7506535299688197090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a882b9742bf8649e28120a9b6b6d137b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  offset: {x: 0, y: 0.5, z: 0}
-  direction: {x: 0, y: -1, z: 0}
-  maxDistance: 1
